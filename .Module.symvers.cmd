@@ -1,1 +1,0 @@
-savedcmd_/home/teiwiet/Main/code/kernels/char_driver/Module.symvers :=  scripts/mod/modpost -M -m       -o /home/teiwiet/Main/code/kernels/char_driver/Module.symvers -T /home/teiwiet/Main/code/kernels/char_driver/modules.order -i Module.symvers -e 

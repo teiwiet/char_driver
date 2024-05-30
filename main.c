@@ -11,14 +11,33 @@ int ret;
 struct cdev pcd_cdev; 
 
 loff_t pcd_llseek(struct file* filp,loff_t f_pos,int whence){
-
+	return 0;
 }
 
-ssize_t pcd_read(struct file* filp,char buff,size_t count,loff_t* f_pos){
-
+ssize_t pcd_read(struct file* filp,char* __user buff,size_t count,loff_t* f_pos){
+	return 0;
 }
 
-struct file_operations pcd_fops;
+ssize_t pcd_write(struct file* filp,const char* __user buff,size_t count,loff_t* f_pos){
+	return 0;
+}
+
+int pcd_open(struct inode* inode,struct file* filp){
+	return 0;
+}
+
+int pcd_release(struct inode* inode,struct file* filp){
+	return 0;
+}
+
+struct file_operations pcd_fops = {
+	.owner = THIS_MODULE,
+	.llseek = pcd_llseek,
+	.read = pcd_read,
+	.write = pcd_write,
+	.open = pcd_open,
+	.release = pcd_release
+};
 
 
 
